@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="ltr">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,37 +17,25 @@
 
 <!-- ══ NAV ══ -->
 <nav id="mainNav">
+  <a href="#about" class="logo">MA</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#portfolio">Work</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="#about" class="logo">MA</a>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- ══ FULLSCREEN MOBILE MENU ══ -->
+<!-- ══ MOBILE MENU ══ -->
 <div class="menu-overlay" id="menuOverlay">
   <div class="menu-overlay-inner">
     <div class="menu-num-bg">MENU</div>
     <nav class="menu-links">
-      <a href="#about" class="menu-link">
-        <span class="ml-num">01</span>
-        <span class="ml-ar">عني</span>
-        <span class="ml-en">About</span>
-      </a>
-      <a href="#portfolio" class="menu-link">
-        <span class="ml-num">02</span>
-        <span class="ml-ar">الأعمال</span>
-        <span class="ml-en">Work</span>
-      </a>
-      <a href="#contact" class="menu-link">
-        <span class="ml-num">03</span>
-        <span class="ml-ar">تواصل</span>
-        <span class="ml-en">Contact</span>
-      </a>
+      <a href="#about"     class="menu-link"><span class="ml-num">01</span><span class="ml-ar">عني</span>    <span class="ml-en">About</span></a>
+      <a href="#portfolio" class="menu-link"><span class="ml-num">02</span><span class="ml-ar">الأعمال</span><span class="ml-en">Work</span></a>
+      <a href="#contact"   class="menu-link"><span class="ml-num">03</span><span class="ml-ar">تواصل</span>  <span class="ml-en">Contact</span></a>
     </nav>
     <div class="menu-footer">
       <a href="https://wa.me/0210865610" target="_blank" rel="noopener">WhatsApp</a>
@@ -57,29 +45,85 @@
   </div>
 </div>
 
+<!-- ══ LOGIN MODAL ══ -->
+<div class="modal-backdrop" id="loginBackdrop">
+  <div class="modal-box">
+    <button class="modal-close" id="loginClose">✕</button>
+    <div class="modal-logo-badge">MA</div>
+    <h2 class="modal-title">Admin Access</h2>
+    <p class="modal-sub">Sign in to manage your portfolio</p>
+    <div class="modal-form">
+      <div class="form-field">
+        <label>Username</label>
+        <input type="text" id="loginUser" placeholder="Username" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="form-field">
+        <label>Password</label>
+        <input type="password" id="loginPass" placeholder="Password">
+      </div>
+      <p class="form-error" id="loginError"></p>
+      <button class="form-btn" id="loginBtn">Sign In</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ADMIN PANEL ══ -->
+<div class="modal-backdrop" id="adminBackdrop">
+  <div class="modal-box admin-box">
+    <button class="modal-close" id="adminClose">✕</button>
+    <div class="admin-header">
+      <div class="modal-logo-badge">MA</div>
+      <div>
+        <h2 class="modal-title">Admin Panel</h2>
+        <p class="modal-sub">Manage your portfolio reels</p>
+      </div>
+    </div>
+
+    <div class="admin-section">
+      <h3 class="admin-section-title">+ Add New Reel</h3>
+      <div class="admin-form">
+        <div class="form-row">
+          <div class="form-field">
+            <label>Title</label>
+            <input type="text" id="reelTitle" placeholder="e.g. Brand Video">
+          </div>
+          <div class="form-field">
+            <label>Type</label>
+            <input type="text" id="reelType" placeholder="Reels / Ad / Short" value="Reels">
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Google Drive Link</label>
+          <input type="text" id="reelLink" placeholder="https://drive.google.com/file/d/...">
+        </div>
+        <p class="form-error" id="adminError"></p>
+        <button class="form-btn" id="addReelBtn">Add Reel +</button>
+      </div>
+    </div>
+
+    <div class="admin-section">
+      <h3 class="admin-section-title">Current Reels — <span id="reelCount">0</span></h3>
+      <div class="admin-reel-list" id="adminReelList"></div>
+    </div>
+
+    <div class="admin-actions">
+      <button class="logout-btn" id="logoutBtn">Logout</button>
+    </div>
+  </div>
+</div>
+
 <!-- ══ HERO ══ -->
 <section class="hero" id="about">
-  <div class="hero-lines">
-    <span></span><span></span><span></span><span></span><span></span>
-  </div>
+  <div class="hero-lines"><span></span><span></span><span></span><span></span><span></span></div>
   <div class="hero-glow"></div>
 
   <p class="hero-eyebrow">Video Editor — Content Creator</p>
 
-  <h1 class="hero-h1">
-    Mohamed
-    <em>Ahmad</em>
-  </h1>
+  <h1 class="hero-h1">Mohamed<em>Ahmad</em></h1>
 
   <div class="hero-desc">
-    <p class="ar-text">
-      <strong>مش بس بعمل مونتاج</strong> —
-      بحول الفيديو بتاعك لمحتوى يتخطف الانتباه وأساعدك تكون ترند.
-    </p>
-    <span class="en-text">
-      I don't just edit — I <strong>transform your footage</strong>
-      into scroll-stopping content that helps you go viral.
-    </span>
+    <p class="p-ar"><strong>مش بس بعمل مونتاج</strong> — بحول الفيديو بتاعك لمحتوى يتخطف الانتباه وأساعدك تكون ترند.</p>
+    <p class="p-en">I don't just edit — I <strong>transform your footage</strong> into scroll-stopping content that helps you go viral.</p>
   </div>
 
   <div class="hero-actions">
@@ -91,18 +135,9 @@
   </div>
 
   <div class="hero-stats">
-    <div class="stat-item">
-      <div class="stat-num">5+</div>
-      <div class="stat-label">Reels</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">100%</div>
-      <div class="stat-label">Viral Focus</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">∞</div>
-      <div class="stat-label">Creativity</div>
-    </div>
+    <div class="stat-item"><div class="stat-num" id="reelStatNum">5+</div><div class="stat-label">Reels</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">Viral Focus</div></div>
+    <div class="stat-item"><div class="stat-num">∞</div><div class="stat-label">Creativity</div></div>
   </div>
 </section>
 
@@ -116,125 +151,7 @@
     </div>
     <div class="sec-rule"></div>
   </div>
-
-  <div class="reel-grid">
-
-    <div class="reel-card reveal d1"
-         onclick="window.open('https://drive.google.com/file/d/1jhWVgoFFsghR0hvRfgT-dYshLEoMOa24/view','_blank')">
-      <div class="reel-ratio">
-        <div class="reel-thumb">
-          <div class="reel-bg-num">01</div>
-          <div class="play-wrap">
-            <div class="play-btn">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-            <span class="play-label">Watch Reel</span>
-          </div>
-        </div>
-        <div class="reel-footer">
-          <div><p class="reel-tag">Reels</p><p class="reel-name">REEL 01</p></div>
-          <div class="reel-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="reel-card reveal d2"
-         onclick="window.open('https://drive.google.com/file/d/1FqpgwP5qvTnCSyPLE3pSfhGYeRjYniRl/view','_blank')">
-      <div class="reel-ratio">
-        <div class="reel-thumb">
-          <div class="reel-bg-num">02</div>
-          <div class="play-wrap">
-            <div class="play-btn">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-            <span class="play-label">Watch Reel</span>
-          </div>
-        </div>
-        <div class="reel-footer">
-          <div><p class="reel-tag">Reels</p><p class="reel-name">REEL 02</p></div>
-          <div class="reel-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="reel-card reveal d3"
-         onclick="window.open('https://drive.google.com/file/d/1qJL_4Fm56S227Z56F_-prhOzhgAPZe_5/view','_blank')">
-      <div class="reel-ratio">
-        <div class="reel-thumb">
-          <div class="reel-bg-num">03</div>
-          <div class="play-wrap">
-            <div class="play-btn">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-            <span class="play-label">Watch Reel</span>
-          </div>
-        </div>
-        <div class="reel-footer">
-          <div><p class="reel-tag">Reels</p><p class="reel-name">REEL 03</p></div>
-          <div class="reel-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="reel-card reveal d4"
-         onclick="window.open('https://drive.google.com/file/d/1IFZlgMUSZYbA0N4NbXwz-3L2Vit1rCKp/view','_blank')">
-      <div class="reel-ratio">
-        <div class="reel-thumb">
-          <div class="reel-bg-num">04</div>
-          <div class="play-wrap">
-            <div class="play-btn">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-            <span class="play-label">Watch Reel</span>
-          </div>
-        </div>
-        <div class="reel-footer">
-          <div><p class="reel-tag">Reels</p><p class="reel-name">REEL 04</p></div>
-          <div class="reel-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="reel-card reveal d4"
-         onclick="window.open('https://drive.google.com/file/d/1zhSJHtreEfq8PtroN7lOfYtSsuL4BHdZ/view','_blank')">
-      <div class="reel-ratio">
-        <div class="reel-thumb">
-          <div class="reel-bg-num">05</div>
-          <div class="play-wrap">
-            <div class="play-btn">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-            <span class="play-label">Watch Reel</span>
-          </div>
-        </div>
-        <div class="reel-footer">
-          <div><p class="reel-tag">Reels</p><p class="reel-name">REEL 05</p></div>
-          <div class="reel-arrow">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
+  <div class="reel-grid" id="reelGrid"></div>
 </section>
 
 <!-- ══ CONTACT ══ -->
@@ -250,49 +167,25 @@
 
   <div class="contact-body reveal">
     <div class="contact-left">
-      <h3 class="contact-headline">
-        خليك
-        <span>ترند.</span>
-      </h3>
-      <p class="contact-body-text">
-        عندك فيديو محتاج يتحول لمحتوى
-        <strong>يشتغل فعلاً؟</strong>
-        تواصل معايا دلوقتي وابدأ رحلتك.
-      </p>
-      <p class="contact-en">
-        Ready to turn your footage into something that actually works? Let's talk.
-      </p>
+      <h3 class="contact-headline">خليك<span>ترند.</span></h3>
+      <p class="contact-body-text p-ar">عندك فيديو محتاج يتحول لمحتوى <strong>يشتغل فعلاً؟</strong> تواصل معايا دلوقتي وابدأ رحلتك.</p>
+      <p class="contact-en">Ready to turn your footage into something that actually works? Let's talk.</p>
     </div>
-
     <div class="contact-right">
-
       <a href="https://wa.me/0210865610" class="contact-card" target="_blank" rel="noopener">
         <div class="cc-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M11.999 0C5.373 0 0 5.373 0 12c0 2.122.553 4.116 1.518 5.847L.044 23.45a.5.5 0 0 0 .611.611l5.567-1.459A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.807 9.807 0 0 1-4.983-1.355l-.357-.213-3.703.971.987-3.608-.233-.371A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
-          </svg>
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 0C5.373 0 0 5.373 0 12c0 2.122.553 4.116 1.518 5.847L.044 23.45a.5.5 0 0 0 .611.611l5.567-1.459A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.807 9.807 0 0 1-4.983-1.355l-.357-.213-3.703.971.987-3.608-.233-.371A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
         </div>
-        <div class="cc-info">
-          <p class="cc-platform">WhatsApp</p>
-          <span class="cc-value">0210865610</span>
-        </div>
-        <span class="cc-arr">←</span>
+        <div class="cc-info"><p class="cc-platform">WhatsApp</p><span class="cc-value">0210865610</span></div>
+        <span class="cc-arr">→</span>
       </a>
-
       <a href="https://t.me/M7md_Ahmad" class="contact-card" target="_blank" rel="noopener">
         <div class="cc-icon">
-          <svg viewBox="0 0 24 24">
-            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-          </svg>
+          <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
         </div>
-        <div class="cc-info">
-          <p class="cc-platform">Telegram</p>
-          <span class="cc-value">@M7md_Ahmad</span>
-        </div>
-        <span class="cc-arr">←</span>
+        <div class="cc-info"><p class="cc-platform">Telegram</p><span class="cc-value">@M7md_Ahmad</span></div>
+        <span class="cc-arr">→</span>
       </a>
-
     </div>
   </div>
 </section>
@@ -300,11 +193,14 @@
 <!-- ══ FOOTER ══ -->
 <footer>
   <a href="#about" class="foot-back">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
-    للأعلى
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>
+    </svg>
+    Back to top
   </a>
   <p class="foot-copy">© 2025 Mohamed Ahmad</p>
-  <div class="foot-logo">MA</div>
+  <!-- Secret admin button -->
+  <button class="foot-logo" id="adminTrigger" title="Admin">MA</button>
 </footer>
 
 <script src="script.js"></script>
